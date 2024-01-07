@@ -8,6 +8,7 @@ import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import SwipeableViews from "react-swipeable-views";
+import useGetProductData from "@/Hooks/useGetProductData";
 
 // Define the theme for the app (assuming you have customized your theme)
 const theme = createTheme();
@@ -39,8 +40,8 @@ TabPanel.propTypes = {
 };
 
 // Main TabbedProductsContent component
-export default function TabbedProductsContent() {
-  const [value, setValue] = React.useState(0);
+export default function TabbedProductsContent({ value, setValue }) {
+  const { products } = useGetProductData(value);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -83,7 +84,29 @@ export default function TabbedProductsContent() {
         index={value}
         onChangeIndex={handleChangeIndex}>
         <TabPanel value={value} index={0} dir={theme.direction}>
-          Products
+          {/* products looping start here */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+            {products?.map((product) => {
+              return (
+                <div
+                  key={product.id}
+                  className="shadow-lg bg-[white] shadow-[#cecdcd35] rounded-lg">
+                  <img
+                    src="https://img.freepik.com/premium-vector/online-earning-form-online-investment-computer-crypto-trading-affiliate-marketing-ecommerce-sales_566886-6197.jpg?w=2000"
+                    alt=""
+                  />
+                  <div className="p-4">
+                    <div className="flex items-center justify-between my-2">
+                      <h1 className="font-bold">{product.name}</h1>
+                      <div><span className="bg-[#7676ff] px-2 text-[white]">+</span> <span className="bg-[gray] px-2 text-[white]">-</span></div>
+                      <p>price: 30$</p>
+                    </div>
+                    <p className="text-[#5f5f5f]">{product.description}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
           Childrens dresses

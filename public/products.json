@@ -1,0 +1,86 @@
+[
+      {
+        "id": 1,
+        "name": "Bags",
+        "price": 49,
+        "description": "Stylish and spacious bags for everyday use.",
+        "image": "bags.jpg",
+        "brand": "FashionAvenue",
+        "color": "Brown",
+        "material": "Leather",
+        "closureType": "Zipper",
+        "availability": true
+      },
+      {
+        "id": 2,
+        "name": "Tops",
+        "price": 29,
+        "description": "Trendy tops for casual and formal occasions.",
+        "image": "tops.jpg",
+        "brand": "TrendyCloset",
+        "color": "Black",
+        "material": "Cotton",
+        "sleeveLength": "Short Sleeve",
+        "availability": true
+      },
+      {
+        "id": 3,
+        "name": "Rings",
+        "price": 99,
+        "description": "Elegant rings for special occasions.",
+        "image": "rings.jpg",
+        "brand": "JewelCraft",
+        "metal": "Gold",
+        "gemstone": "Diamond",
+        "size": "7",
+        "availability": true
+      },
+      {
+        "id": 4,
+        "name": "Books",
+        "price": 19,
+        "description": "Bestselling books for avid readers.",
+        "image": "books.jpg",
+        "author": "Various Authors",
+        "genre": "Fiction",
+        "format": "Paperback",
+        "availability": true
+      },
+      {
+        "id": 5,
+        "name": "Earrings",
+        "price": 79,
+        "description": "Exquisite earrings for a touch of elegance.",
+        "image": "earrings.jpg",
+        "brand": "GlamourJewels",
+        "metal": "Silver",
+        "gemstone": "Sapphire",
+        "closureType": "Stud",
+        "availability": true
+      },
+      {
+        "id": 6,
+        "name": "Lamps",
+        "price": 129,
+        "description": "Beautiful lamps to illuminate your home.",
+        "image": "lamps.jpg",
+        "brand": "HomeDecorInc",
+        "color": "White",
+        "material": "Ceramic",
+        "bulbType": "LED",
+        "availability": true
+      },
+      {
+        "id": 7,
+        "name": "Dresses",
+        "price": 69,
+        "description": "Stunning dresses for various occasions.",
+        "image": "dresses.jpg",
+        "brand": "FashionHub",
+        "color": "Red",
+        "material": "Polyester",
+        "dressLength": "Knee-Length",
+        "availability": true
+      }
+    ]
+    
