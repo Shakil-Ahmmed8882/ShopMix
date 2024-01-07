@@ -21,7 +21,7 @@ const TabTitle = ({ value }) => {
 
   
   // this component now can be used if title need based on tab index
-  return <h1 className="text-4xl relative  mb-3 uppercase">{component}</h1>;
+  return <h1 className="text-3xl relative mt-8  mb-3 uppercase">{component}</h1>;
 };
 
 export default TabTitle;

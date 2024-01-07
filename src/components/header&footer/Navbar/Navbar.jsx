@@ -17,13 +17,14 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Link from "next/link";
 import { NavItems } from "./Links";
+import { usePathname } from "next/navigation";
 
 const drawerWidth = 240;
 
 function Navbar(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-
+  const pathName = usePathname()
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
@@ -52,14 +53,14 @@ function Navbar(props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: "flex" }}>
+    <>
       <CssBaseline />
       <AppBar
         component="nav"
         sx={{
-          backgroundColor: "white",
+          backgroundColor: "#feddcd84",
           color: "#000",
-          boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
+          boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.0)",
         }}>
         <Toolbar>
           <IconButton
@@ -78,8 +79,11 @@ function Navbar(props) {
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {NavItems.map((item) => (
-              <Link key={item.slug} href={item.slug}>
-                <Button sx={{ color: "#000" }}>{item.name}</Button>
+              <Link
+                key={item.slug}
+                href={item.slug}
+                className={`p-1  ${pathName === item.slug ? "border-primaryColor border-l-2" : ""}`}>
+                <Button sx={{color: pathName === item.slug ?"#000":"#000" }}>{item.name}</Button>
               </Link>
             ))}
           </Box>
@@ -104,11 +108,12 @@ function Navbar(props) {
           {drawer}
         </Drawer>
       </nav>
-      <Box component="main" sx={{ p: 3 }}>
+      <Box component="main">
         <Toolbar />
         <Typography></Typography>
       </Box>
-    </Box>
+    
+    </>
   );
 }
 

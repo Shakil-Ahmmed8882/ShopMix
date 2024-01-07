@@ -52,7 +52,8 @@ export default function TabbedProductsContent({ value, setValue }) {
   };
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider  theme={theme}>
+        <Box className=" justify-between flex">
       <Box sx={{ maxWidth: { xs: 350, sm: 600 }, bgcolor: "background.paper" }}>
         <Tabs
           value={value}
@@ -77,15 +78,19 @@ export default function TabbedProductsContent({ value, setValue }) {
           <Tab label="Rings" />
           <Tab label="Bags" />
         </Tabs>
+        </Box>
+<div>short by</div>
+
+        
       </Box>
 
       <SwipeableViews
         axis={theme.direction === "rtl" ? "x-reverse" : "x"}
         index={value}
         onChangeIndex={handleChangeIndex}>
-        <TabPanel value={value} index={0} dir={theme.direction}>
+        <TabPanel value={value}  index={0} dir={theme.direction}>
           {/* products looping start here */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className=" grid md:grid-cols-2 lg:grid-cols-4 gap-5">
             {products?.map((product) => {
               return (
                 <div
