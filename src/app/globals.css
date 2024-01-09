@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 :root{
       --bg:#F9FBFD;
       --text:#000
@@ -18,7 +20,34 @@ body{
       color: var(--text);
 }
 
+.line-heighth1{
+      line-height:1 !important;
+}
+
 a{
       text-decoration: none;
       color: inherit;
 }
+
+
+/* Scroll animation */
+.animate-up-down {
+      transition: all 1s;
+      animation: upDownAnimation 2s ease-in-out infinite; /* Apply the animation */
+    }
+
+@keyframes upDownAnimation {
+      0%,100%{
+        transform: translateY(0);
+        opacity: 0.3;
+        
+      }
+      50% {
+            opacity: 0.5;
+      }
+      75% {
+            transform: translateY(40px);
+            opacity: 1;
+      }
+    }
+    

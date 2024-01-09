@@ -18,6 +18,7 @@ import Button from "@mui/material/Button";
 import Link from "next/link";
 import { NavItems } from "./Links";
 import { usePathname } from "next/navigation";
+import ConditionalNav from "@/components/Shared/ConditionalNav";
 
 const drawerWidth = 240;
 
@@ -86,6 +87,9 @@ function Navbar(props) {
                 <Button sx={{color: pathName === item.slug ?"#000":"#000" }}>{item.name}</Button>
               </Link>
             ))}
+
+             <ConditionalNav pathName={pathName} matchingPath={"/login"} text="Login"/>
+             <ConditionalNav pathName={pathName} matchingPath={"/admin"} text="Admin" />
           </Box>
         </Toolbar>
       </AppBar>

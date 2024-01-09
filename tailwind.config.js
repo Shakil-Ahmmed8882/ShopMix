@@ -9,6 +9,7 @@ module.exports = {
     colors:{
       primaryColor: "#FD7028",
       yelloishBg:"#FFEDCD",
+      blueLightBG: "#D5E9FF"
       },
     extend: {},
   },
